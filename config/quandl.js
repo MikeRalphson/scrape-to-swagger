@@ -12,13 +12,13 @@ var config = module.exports = {
   path: {selector: 'pre:contains(Definition) + blockquote', regex: /\w+ https:\/\/www.quandl.com\/api\/v3(\/\S*)/},
   method: {selector: 'pre:contains(Definition) + blockquote', regex: /(\w+) https:\/\/www.quandl.com\/api\/v3\/\S*/},
 
-  parameters: {selector: 'table'},
+  parameters: {selector: 'h3:contains(QUERY PARAMETERS) + table'},
   parameter: {selector: 'tr'},
   parameterIn: 'query',
-  parameterType: 'string',
   parameterName: {selector: 'td:first-of-type', regex: /(\S+)/},
   parameterRequired: {selector: 'td:nth-of-type(2)'},
-  parameterDescription: {selector: 'td:nth-of-type(3)'},
+  parameterType: {selector: 'td:nth-of-type(3)'},
+  parameterDescription: {selector: 'td:nth-of-type(4)'},
 
   responseSchema: {selector: 'pre:contains(Example Response) + div + blockquote', isExample: true},
 
